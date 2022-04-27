@@ -53,7 +53,6 @@ class MemberTableVC: UITableViewController{
         if(segue.identifier == "addPokemonSegue")
         {
             let addPokemon = segue.destination as? PokeListTableVC
-            print(addPokemon)
             addPokemon!.selectedParty = self.selectedParty
         }
     }

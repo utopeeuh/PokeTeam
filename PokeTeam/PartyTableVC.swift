@@ -60,7 +60,6 @@ class PartyTableVC: UITableViewController {
             let indexPath = tableView.indexPathForSelectedRow!
             
             let partyDetail = segue.destination as? MemberTableVC
-            print(partyDetail)
             
             let selectedParty : PartyModel!
             selectedParty = partyList[indexPath.row]

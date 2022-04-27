@@ -1,9 +1,17 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let pokemon = try? newJSONDecoder().decode(Pokemon.self, from: jsonData)
+//   let pokemonList = try? newJSONDecoder().decode(PokemonList.self, from: jsonData)
 
 import Foundation
+
+//MARK: - PokemonBaseData
+struct PokemonBaseData {
+    let name: String
+    let url: String
+    let sprite: String
+    let types: [TypeElement]
+}
 
 // MARK: - Pokemon
 struct Pokemon: Codable {
@@ -40,25 +48,6 @@ struct Pokemon: Codable {
         case pastTypes = "past_types"
         case species, sprites, stats, types, weight
     }
-}
-
-//// MARK: - PokeBaseData
-//struct PokeBaseData{
-//    let mainSprite : String
-//}
-
-// MARK: - PokemonList
-struct PokemonList: Codable {
-    let count: Int
-    let next: String
-    let previous: JSONNull?
-    let results: [Result]
-}
-
-// MARK: - Result
-struct Result: Codable {
-    let name: String
-    let url: String
 }
 
 // MARK: - Ability
@@ -160,41 +149,22 @@ struct Versions: Codable {
 // MARK: - Sprites
 class Sprites: Codable {
     let backDefault: String
-    let backFemale: JSONNull?
     let backShiny: String
-    let backShinyFemale: JSONNull?
     let frontDefault: String
-    let frontFemale: JSONNull?
     let frontShiny: String
-    let frontShinyFemale: JSONNull?
-    let other: Other?
-    let versions: Versions?
-    let animated: Sprites?
 
     enum CodingKeys: String, CodingKey {
         case backDefault = "back_default"
-        case backFemale = "back_female"
         case backShiny = "back_shiny"
-        case backShinyFemale = "back_shiny_female"
         case frontDefault = "front_default"
-        case frontFemale = "front_female"
         case frontShiny = "front_shiny"
-        case frontShinyFemale = "front_shiny_female"
-        case other, versions, animated
     }
 
     init(backDefault: String, backFemale: JSONNull?, backShiny: String, backShinyFemale: JSONNull?, frontDefault: String, frontFemale: JSONNull?, frontShiny: String, frontShinyFemale: JSONNull?, other: Other?, versions: Versions?, animated: Sprites?) {
         self.backDefault = backDefault
-        self.backFemale = backFemale
         self.backShiny = backShiny
-        self.backShinyFemale = backShinyFemale
         self.frontDefault = frontDefault
-        self.frontFemale = frontFemale
         self.frontShiny = frontShiny
-        self.frontShinyFemale = frontShinyFemale
-        self.other = other
-        self.versions = versions
-        self.animated = animated
     }
 }
 
@@ -603,4 +573,18 @@ class JSONAny: Codable {
             try JSONAny.encode(to: &container, value: self.value)
         }
     }
+}
+
+// MARK: - PokemonList
+struct PokemonList: Codable {
+    let count: Int
+    let next: String
+    let previous: JSONNull?
+    let results: [Result]
+}
+
+// MARK: - Result
+struct Result: Codable {
+    let name: String
+    let url: String
 }

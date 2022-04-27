@@ -200,30 +200,30 @@
         <!--Add Pokemon-->
         <scene sceneID="V2h-5N-ZNf">
             <objects>
-                <tableViewController id="jga-W3-Jbj" customClass="PokeListTableVC" sceneMemberID="viewController">
+                <tableViewController id="jga-W3-Jbj" customClass="PokeListTableVC" customModule="PokeTeam" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="PeN-7X-EE7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokeListCellId" id="KJM-TT-c6f" customClass="PokeListCell" customModule="PokeTeam" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokeListCellId" rowHeight="50" id="KJM-TT-c6f" customClass="PokeListCell" customModule="PokeTeam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KJM-TT-c6f" id="mxT-cN-Y78">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2z-mn-rOZ">
-                                            <rect key="frame" x="20" y="11.5" width="331" height="21"/>
+                                            <rect key="frame" x="20" y="14.5" width="331" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="M2z-mn-rOZ" secondAttribute="trailing" constant="20" symbolic="YES" id="7rC-Mf-E5i"/>
                                         <constraint firstItem="M2z-mn-rOZ" firstAttribute="centerY" secondItem="mxT-cN-Y78" secondAttribute="centerY" id="BrP-mM-OgQ"/>
-                                        <constraint firstItem="M2z-mn-rOZ" firstAttribute="leading" secondItem="mxT-cN-Y78" secondAttribute="leading" constant="20" id="HtC-4O-ZsQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="M2z-mn-rOZ" secondAttribute="trailing" constant="67" id="HHO-ZO-Qqy"/>
+                                        <constraint firstItem="M2z-mn-rOZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mxT-cN-Y78" secondAttribute="leading" constant="20" symbolic="YES" id="HtC-4O-ZsQ"/>
                                         <constraint firstItem="M2z-mn-rOZ" firstAttribute="width" secondItem="mxT-cN-Y78" secondAttribute="width" multiplier="0.8" id="rle-GW-WQk"/>
                                     </constraints>
                                 </tableViewCellContentView>
