@@ -13,6 +13,8 @@
 		95384CE628194FF200C0AA33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95384CE428194FF200C0AA33 /* Main.storyboard */; };
 		95384CE928194FF200C0AA33 /* PokeTeam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95384CE728194FF200C0AA33 /* PokeTeam.xcdatamodeld */; };
 		95384CEB28194FF200C0AA33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95384CEA28194FF200C0AA33 /* Assets.xcassets */; };
+		95384CF62819535D00C0AA33 /* PartyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95384CF52819535D00C0AA33 /* PartyModel.swift */; };
+		95384CFA281953AB00C0AA33 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95384CF9281953AB00C0AA33 /* PokemonModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		95384CE828194FF200C0AA33 /* PokeTeam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PokeTeam.xcdatamodel; sourceTree = "<group>"; };
 		95384CEA28194FF200C0AA33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95384CEF28194FF200C0AA33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95384CF52819535D00C0AA33 /* PartyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyModel.swift; sourceTree = "<group>"; };
+		95384CF9281953AB00C0AA33 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				95384CEA28194FF200C0AA33 /* Assets.xcassets */,
 				95384CEF28194FF200C0AA33 /* Info.plist */,
 				95384CE728194FF200C0AA33 /* PokeTeam.xcdatamodeld */,
+				95384CF52819535D00C0AA33 /* PartyModel.swift */,
+				95384CF9281953AB00C0AA33 /* PokemonModel.swift */,
 			);
 			path = PokeTeam;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				95384CE328194FF200C0AA33 /* ViewController.swift in Sources */,
+				95384CFA281953AB00C0AA33 /* PokemonModel.swift in Sources */,
 				95384CDF28194FF200C0AA33 /* AppDelegate.swift in Sources */,
 				95384CE128194FF200C0AA33 /* SceneDelegate.swift in Sources */,
+				95384CF62819535D00C0AA33 /* PartyModel.swift in Sources */,
 				95384CE928194FF200C0AA33 /* PokeTeam.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PartyModel" representedClassName="PartyModel" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="partyToPoke" optional="YES" toMany="YES" maxCount="6" deletionRule="Nullify" destinationEntity="PokemonModel" inverseName="pokeToParty" inverseEntity="PokemonModel"/>
+    </entity>
+    <entity name="PokemonModel" representedClassName="PokemonModel" syncable="YES">
+        <attribute name="partyId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="pokeToParty" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PartyModel" inverseName="partyToPoke" inverseEntity="PartyModel"/>
+    </entity>
+    <elements>
+        <element name="PartyModel" positionX="-36" positionY="9" width="128" height="59"/>
+        <element name="PokemonModel" positionX="0" positionY="54" width="128" height="74"/>
+    </elements>
 </model>
