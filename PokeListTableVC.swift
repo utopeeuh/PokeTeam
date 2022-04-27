@@ -29,6 +29,7 @@ class PokeListTableVC : UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //detect row select
         print(indexPath.row)
+        DatabaseHelper.shared.addPokemonToParty(selectedParty!.id, indexPath.row+1 as NSNumber)
         navigationController?.popViewController(animated: true)
     }
 }

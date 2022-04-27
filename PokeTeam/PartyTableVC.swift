@@ -13,33 +13,19 @@ class PartyTableVC: UITableViewController {
         let partyCell = tableView.dequeueReusableCell(withIdentifier: "partyCellId") as! PartyCell
         let memberList = DatabaseHelper.shared.getMemberOfParty(partyList[indexPath.row].id as NSNumber)
 
-        var partyCellGroup = [partyCell.memberLbl1.text, partyCell.memberLbl2.text, partyCell.memberLbl3.text, partyCell.memberLbl4.text, partyCell.memberLbl5.text, partyCell.memberLbl6.text]
+        var partyCellGroup = [partyCell.memberLbl1, partyCell.memberLbl2, partyCell.memberLbl3, partyCell.memberLbl4, partyCell.memberLbl5, partyCell.memberLbl6]
         
         for i in 0..<memberList.count {
-            partyCellGroup[i] = FetchHelper.shared.getPokemonName(memberList[i].url)
+            let pokemonName = FetchHelper.shared.getPokemonName(memberList[i].url)
+            partyCellGroup[i]!.text = pokemonName
         }
         
         return partyCell
-        
     }
 
     @IBAction func addPartyAction(_ sender: Any) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "PartyModel", in: context)
-        let newParty = PartyModel(entity: entity!, insertInto: context)
-        
-        newParty.id = partyList.count as NSNumber
-        
-        do{
-            try context.save()
-            partyList.append(newParty)
-            tableView.reloadData()
-            print("saved!")
-        }
-        catch{
-            print("context save error")
-        }
+        partyList = DatabaseHelper.shared.addParty(partyList)
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
