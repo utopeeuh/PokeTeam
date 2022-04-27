@@ -25,4 +25,10 @@ class PokeListTableVC : UITableViewController{
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //detect row select
+        print(indexPath.row)
+        navigationController?.popViewController(animated: true)
+    }
 }

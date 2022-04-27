@@ -43,7 +43,7 @@ class FetchHelper : UIViewController{
         var pokemonList = [Pokemon]()
         var result: PokemonList?
         let semaphore = DispatchSemaphore(value: 0)
-        let url = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
+        let url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {data, response, error in
             guard let data = data, error == nil else{
@@ -68,11 +68,8 @@ class FetchHelper : UIViewController{
         semaphore.wait()
         
         for pokemon in result!.results {
-//            var currPokemon = PokemonBaseData(name: pokemon.name, url: pokemon.url, sprite: <#T##String#>, types: <#T##[TypeElement]#>)
             pokemonList.append(self.getPokemon(pokemon.url)!)
         }
-        
-        
         
         return pokemonList
     }
