@@ -13,7 +13,6 @@
 		95384CE628194FF200C0AA33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95384CE428194FF200C0AA33 /* Main.storyboard */; };
 		95384CE928194FF200C0AA33 /* PokeTeam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95384CE728194FF200C0AA33 /* PokeTeam.xcdatamodeld */; };
 		95384CEB28194FF200C0AA33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95384CEA28194FF200C0AA33 /* Assets.xcassets */; };
-		95384CEE28194FF200C0AA33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95384CEC28194FF200C0AA33 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +23,6 @@
 		95384CE528194FF200C0AA33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95384CE828194FF200C0AA33 /* PokeTeam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PokeTeam.xcdatamodel; sourceTree = "<group>"; };
 		95384CEA28194FF200C0AA33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		95384CED28194FF200C0AA33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95384CEF28194FF200C0AA33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +61,6 @@
 				95384CE228194FF200C0AA33 /* ViewController.swift */,
 				95384CE428194FF200C0AA33 /* Main.storyboard */,
 				95384CEA28194FF200C0AA33 /* Assets.xcassets */,
-				95384CEC28194FF200C0AA33 /* LaunchScreen.storyboard */,
 				95384CEF28194FF200C0AA33 /* Info.plist */,
 				95384CE728194FF200C0AA33 /* PokeTeam.xcdatamodeld */,
 			);
@@ -128,7 +125,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95384CEE28194FF200C0AA33 /* LaunchScreen.storyboard in Resources */,
 				95384CEB28194FF200C0AA33 /* Assets.xcassets in Resources */,
 				95384CE628194FF200C0AA33 /* Main.storyboard in Resources */,
 			);
@@ -157,14 +153,6 @@
 				95384CE528194FF200C0AA33 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		95384CEC28194FF200C0AA33 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95384CED28194FF200C0AA33 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -295,7 +283,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokeTeam/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -323,7 +311,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokeTeam/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
