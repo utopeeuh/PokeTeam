@@ -89,5 +89,64 @@ class DatabaseHelper : UIViewController{
         
         return memberList
     }
+    
+    func deleteParty(_ party: PartyModel){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let memberRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PokemonModel")
+        let partyRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PartyModel")
+        
+        let memberPredicate = NSPredicate(format: "partyId == %@", String(describing: party.id))
+        let partyPredicate = NSPredicate(format: "id == %@", String(describing: party.id))
+        
+        memberRequest.predicate = memberPredicate
+        partyRequest.predicate = partyPredicate
+      
+        // delete party members
+        do {
+            let results:NSArray = try context.fetch(memberRequest) as NSArray
+            for result in results{
+                context.delete(result as! NSManagedObject)
+            }
+            try context.save()
+        } catch _ {
+            print("delete party member error")
+        }
+        
+        // delete party
+        do {
+            let results:NSArray = try context.fetch(partyRequest) as NSArray
+            for result in results{
+                context.delete(result as! NSManagedObject)
+            }
+            try context.save()
+        } catch _ {
+            print("delete party error")
+        }
+    }
+    
+    func deletePartyMember(_ partyMember: PokemonModel){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PokemonModel")
+        
+        let partyIdPredicate = NSPredicate(format: "partyId == %@", String(describing: partyMember.partyId))
+        let idPredicate = NSPredicate(format: "url == %@", String(describing: partyMember.url))
+        
+        let deletePredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [partyIdPredicate, idPredicate])
+        
+        request.predicate = deletePredicate
+
+        do {
+            let results:NSArray = try context.fetch(request) as NSArray
+            for result in results{
+                context.delete(result as! NSManagedObject)
+            }
+            try context.save()
+        } catch _ {
+            print("delete party member error")
+        }
+    }
    
 }

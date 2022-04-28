@@ -18,9 +18,37 @@ class MemberTableVC: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let pokemon = FetchHelper.shared.getPokemon(memberList[indexPath.row].url)
+                                                            
         let memberCell = tableView.dequeueReusableCell(withIdentifier: "memberCellId") as! MemberCell
         
-        memberCell.memberLbl.text = FetchHelper.shared.getPokemonName(memberList[indexPath.row].url).capitalized
+        memberCell.memberLbl.text = pokemon!.name.capitalized
+        memberCell.memberImg.load(url: URL(string: (pokemon?.sprites.frontDefault)!)!)
+        
+        memberCell.memberIdLbl.text = { () -> String in
+            var stringId = ""
+            if(pokemon!.id < 10){
+                stringId = "00"
+            }
+            else if(pokemon!.id < 100){
+                stringId = "0"
+            }
+            stringId += String(describing: pokemon!.id)
+            return stringId
+        }()
+        
+        memberCell.memberType.text  = { () -> String in
+            var stringType = ""
+            for i in 0..<pokemon!.types.count {
+                stringType += pokemon!.types[i].type.name.capitalized
+                if(pokemon!.types.count > 1 && i == 0){
+                    stringType += " / "
+                }
+            }
+            return stringType
+        }()
+        
         
         return memberCell
     }
@@ -53,6 +81,20 @@ class MemberTableVC: UITableViewController{
             tableView.deselectRow(at: indexPath , animated: true)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+            if editingStyle == .delete {
+
+                // remove the item from the data model
+                DatabaseHelper.shared.deletePartyMember(memberList[indexPath.row])
+                memberList.remove(at: indexPath.row)
+
+                // delete the table view row
+                tableView.deleteRows(at: [indexPath], with: .fade)
+
+            }
+        }
 }
 
 extension MemberTableVC : PokemonSelectionDelegate{

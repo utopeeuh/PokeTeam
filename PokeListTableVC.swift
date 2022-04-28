@@ -1,5 +1,5 @@
 import UIKit
-import CoreData
+import Kingfisher
 
 protocol PokemonSelectionDelegate {
     func didTapChoice()
@@ -20,7 +20,32 @@ class PokeListTableVC : UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let pokeListCell = tableView.dequeueReusableCell(withIdentifier: "pokeListCellId") as! PokeListCell
         
-        pokeListCell.pokemonLbl.text = pokemonList[indexPath.row].name.capitalized
+        let pokemon = pokemonList[indexPath.row]
+        let imageUrl = URL(string: pokemon.sprites.frontDefault)
+        
+        pokeListCell.pokemonImg.kf.setImage(with: imageUrl)
+        pokeListCell.pokemonLbl.text = pokemon.name.capitalized
+        pokeListCell.idLbl.text = { () -> String in
+            var stringId = ""
+            if(pokemon.id < 10){
+                stringId = "00"
+            }
+            else if(pokemon.id < 100){
+                stringId = "0"
+            }
+            stringId += String(describing: pokemon.id)
+            return stringId
+        }()
+        pokeListCell.typeLbl.text  = { () -> String in
+            var stringType = ""
+            for i in 0..<pokemon.types.count {
+                stringType += pokemon.types[i].type.name.capitalized
+                if(pokemon.types.count > 1 && i == 0){
+                    stringType += " / "
+                }
+            }
+            return stringType
+        }()
         
         return pokeListCell
     }
