@@ -33,10 +33,8 @@ class MemberTableVC: UITableViewController{
         tableView.reloadData()
     }
     
-    
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "addPokemonSegue", sender: self)
+        self.performSegue(withIdentifier: "showPokemonDetailSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,6 +43,14 @@ class MemberTableVC: UITableViewController{
             let addPokemon = segue.destination as? PokeListTableVC
             addPokemon!.selectedParty = self.selectedParty
             addPokemon?.pokemonSelectionDelegate = self
+        }
+        if(segue.identifier == "showPokemonDetailSegue")
+        {
+            let showPokemon = segue.destination as? PokemonDetailVC
+            let indexPath = tableView.indexPathForSelectedRow!
+            showPokemon!.pokemonUrl = memberList[indexPath.row].url
+            
+            tableView.deselectRow(at: indexPath , animated: true)
         }
     }
 }

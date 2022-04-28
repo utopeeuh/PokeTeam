@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -136,13 +137,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgv-52-x6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="84"/>
+            <point key="canvasLocation" x="1625" y="-622"/>
+        </scene>
+        <!--Party Member-->
+        <scene sceneID="3vm-c1-u8i">
+            <objects>
+                <viewController id="bY5-Sv-D0q" customClass="PokemonDetailVC" customModule="PokeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TEA-tJ-N74">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVg-sj-mnQ">
+                                <rect key="frame" x="31" y="92" width="352" height="352"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uVg-sj-mnQ" secondAttribute="height" multiplier="1:1" id="AK5-ZY-eyH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a1C-Uo-4Ff"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uVg-sj-mnQ" firstAttribute="top" secondItem="a1C-Uo-4Ff" secondAttribute="top" constant="4" id="cio-ol-F18"/>
+                            <constraint firstItem="uVg-sj-mnQ" firstAttribute="centerX" secondItem="a1C-Uo-4Ff" secondAttribute="centerX" id="k1o-1J-se9"/>
+                            <constraint firstItem="uVg-sj-mnQ" firstAttribute="width" secondItem="TEA-tJ-N74" secondAttribute="width" multiplier="0.85" id="wZm-yr-w0Y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Party Member" id="0m8-XO-qJk"/>
+                    <connections>
+                        <outlet property="pokeImage" destination="uVg-sj-mnQ" id="rkj-Xd-Laa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ety-Ic-64W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3196" y="806"/>
         </scene>
         <!--Party-->
         <scene sceneID="St4-fQ-Iit">
             <objects>
                 <tableViewController id="VZp-bf-n2b" customClass="MemberTableVC" customModule="PokeTeam" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="mv9-Gs-yBT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="mv9-Gs-yBT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -194,6 +227,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addBtn" destination="3QR-jm-81P" id="Fbp-da-YBf"/>
+                        <segue destination="bY5-Sv-D0q" kind="show" identifier="showPokemonDetailSegue" id="Jvh-hk-YOf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8U-iq-YHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -260,7 +294,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pm-n0-gTy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3196" y="757"/>
+            <point key="canvasLocation" x="3196" y="-622"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="reZ-13-DNq">
@@ -277,7 +311,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upM-7h-hvx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2419" y="757"/>
+            <point key="canvasLocation" x="2419" y="-622"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9503CD26281A90DE000ECD90 /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9503CD25281A90DE000ECD90 /* PokemonDetailVC.swift */; };
 		95384CDF28194FF200C0AA33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95384CDE28194FF200C0AA33 /* AppDelegate.swift */; };
 		95384CE128194FF200C0AA33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95384CE028194FF200C0AA33 /* SceneDelegate.swift */; };
 		95384CE628194FF200C0AA33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95384CE428194FF200C0AA33 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9503CD25281A90DE000ECD90 /* PokemonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 		95384CDB28194FF200C0AA33 /* PokeTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95384CDE28194FF200C0AA33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95384CE028194FF200C0AA33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				95384CDE28194FF200C0AA33 /* AppDelegate.swift */,
 				95384CE028194FF200C0AA33 /* SceneDelegate.swift */,
 				95384CE428194FF200C0AA33 /* Main.storyboard */,
+				9503CD25281A90DE000ECD90 /* PokemonDetailVC.swift */,
 				95384CEA28194FF200C0AA33 /* Assets.xcassets */,
 				95384CEF28194FF200C0AA33 /* Info.plist */,
 				95384CE728194FF200C0AA33 /* PokeTeam.xcdatamodeld */,
@@ -203,6 +206,7 @@
 				95384CFA281953AB00C0AA33 /* PokemonModel.swift in Sources */,
 				95384CDF28194FF200C0AA33 /* AppDelegate.swift in Sources */,
 				95384CFC281974BB00C0AA33 /* DatabaseHelper.swift in Sources */,
+				9503CD26281A90DE000ECD90 /* PokemonDetailVC.swift in Sources */,
 				95384D0A2819779900C0AA33 /* PokeListCell.swift in Sources */,
 				95384D1128197E6500C0AA33 /* Pokemon.swift in Sources */,
 				95384CE128194FF200C0AA33 /* SceneDelegate.swift in Sources */,
@@ -350,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M3J6YQYJKM;
@@ -378,6 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M3J6YQYJKM;
