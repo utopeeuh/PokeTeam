@@ -68,7 +68,7 @@ class DatabaseHelper : UIViewController{
     }
     
     func getMemberOfParty(_ partyId: NSNumber) -> [PokemonModel]{
-        
+
         var memberList = [PokemonModel]()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext

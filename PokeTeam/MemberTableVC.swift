@@ -9,6 +9,10 @@ class MemberTableVC: UITableViewController{
     private var memberList = [PokemonModel]()
 
     override func viewDidLoad() {
+        loadMemberList()
+    }
+    
+    func loadMemberList(){
         memberList = DatabaseHelper.shared.getMemberOfParty(selectedParty!.id)
         addBtn.isHidden = memberList.count == 6 ? true : false
     }
@@ -16,7 +20,7 @@ class MemberTableVC: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let memberCell = tableView.dequeueReusableCell(withIdentifier: "memberCellId") as! MemberCell
         
-        memberCell.memberLbl.text = FetchHelper.shared.getPokemonName(memberList[indexPath.row].url)
+        memberCell.memberLbl.text = FetchHelper.shared.getPokemonName(memberList[indexPath.row].url).capitalized
         
         return memberCell
     }
@@ -25,9 +29,11 @@ class MemberTableVC: UITableViewController{
         return memberList.count
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "addPokemonSegue", sender: self)
@@ -38,7 +44,16 @@ class MemberTableVC: UITableViewController{
         {
             let addPokemon = segue.destination as? PokeListTableVC
             addPokemon!.selectedParty = self.selectedParty
+            addPokemon?.pokemonSelectionDelegate = self
         }
     }
-    
 }
+
+extension MemberTableVC : PokemonSelectionDelegate{
+    func didTapChoice() {
+        loadMemberList()
+        tableView.reloadData()
+    }
+
+}
+

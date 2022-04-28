@@ -9,16 +9,30 @@ class PartyTableVC: UITableViewController {
         partyList = DatabaseHelper.shared.getAllParty()
     }
     
+    deinit{
+        print("yo")
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let partyCell = tableView.dequeueReusableCell(withIdentifier: "partyCellId") as! PartyCell
-        let memberList = DatabaseHelper.shared.getMemberOfParty(partyList[indexPath.row].id as NSNumber)
-
+        let partyCell = tableView.dequeueReusableCell(withIdentifier: "partyCellId", for: indexPath) as! PartyCell
+        var memberList = DatabaseHelper.shared.getMemberOfParty(partyList[indexPath.row].id as NSNumber)
+        
         var partyCellGroup = [partyCell.memberLbl1, partyCell.memberLbl2, partyCell.memberLbl3, partyCell.memberLbl4, partyCell.memberLbl5, partyCell.memberLbl6]
         
-        for i in 0..<memberList.count {
-            let pokemonName = FetchHelper.shared.getPokemonName(memberList[i].url)
-            partyCellGroup[i]!.text = pokemonName
+        for i in 0..<6 {
+            if(i > memberList.count-1){
+                partyCellGroup[i]!.text = "Member \(i+1)"
+                print("Party: \(indexPath.row) | i : \(i+1)" )
+            }
+            else{
+                let pokemonName = FetchHelper.shared.getPokemonName(memberList[i].url).capitalized
+                partyCellGroup[i]!.text = pokemonName
+            }
+            
         }
+        
+        partyCellGroup.removeAll()
+        memberList.removeAll()
         
         return partyCell
     }
