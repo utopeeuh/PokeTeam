@@ -59,7 +59,7 @@ class PartyTableVC: UITableViewController {
         {
             let indexPath = tableView.indexPathForSelectedRow!
             
-            let partyDetail = segue.destination as? PartyTabBarVC
+            let partyDetail = segue.destination as? MemberTableVC
             
             let selectedParty : PartyModel!
             selectedParty = partyList[indexPath.row]
@@ -79,9 +79,8 @@ class PartyTableVC: UITableViewController {
 
                 // delete the table view row
                 tableView.deleteRows(at: [indexPath], with: .fade)
+
             }
-    }
-    
-    
+        }
 }
 

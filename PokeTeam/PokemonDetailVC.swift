@@ -8,7 +8,6 @@ class PokemonDetailVC : UIViewController{
     @IBOutlet weak var baseView: UIView!
     private var selP: Pokemon? = nil
     
-    @IBOutlet weak var pokemonName: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var species: UILabel!
@@ -28,15 +27,16 @@ class PokemonDetailVC : UIViewController{
     @IBOutlet weak var eff25: UILabel!
     
     override func viewDidLoad() {
+        
+        
+        
         // lock horizontal scrolling
-        scrollView.isDirectionalLockEnabled = true
         scrollViewDidScroll(scrollView: scrollView)
         
         // get pokemon
         selP = FetchHelper.shared.getPokemon(pokemonUrl!)
         
         title = selP!.name.capitalized
-        pokemonName.text = selP!.name.capitalized
         
         // set background color
         
@@ -97,13 +97,6 @@ class PokemonDetailVC : UIViewController{
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.contentOffset.x>0 {
-            scrollView.contentOffset.x = 0
-        }
-    }
-    
-    @IBAction func closeAction(_ sender: Any){
-        navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
+        scrollView.contentOffset.x = 0
     }
 }

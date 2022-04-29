@@ -95,10 +95,6 @@ class MemberTableVC: UITableViewController{
 
             }
         }
-    @IBAction func backAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
-    }
 }
 
 extension MemberTableVC : PokemonSelectionDelegate{

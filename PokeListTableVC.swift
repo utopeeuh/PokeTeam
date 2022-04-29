@@ -13,8 +13,6 @@ class PokeListTableVC : UITableViewController{
     
     private var pokemonList = [Pokemon]()
 
-    @IBOutlet weak var backBtn: UIButton!
-    
     override func viewDidLoad() {
         pokemonList = FetchHelper.shared.getAllPokemon()
     }
@@ -66,11 +64,5 @@ class PokeListTableVC : UITableViewController{
         DatabaseHelper.shared.addPokemonToParty(selectedParty!.id, indexPath.row+1 as NSNumber)
         pokemonSelectionDelegate.didTapChoice()
         navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func backAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
     }
 }
