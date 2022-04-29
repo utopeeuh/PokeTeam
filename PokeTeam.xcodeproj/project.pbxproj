@@ -32,6 +32,8 @@
 		95384D082819779300C0AA33 /* PokeListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95384D072819779300C0AA33 /* PokeListTableVC.swift */; };
 		95384D0A2819779900C0AA33 /* PokeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95384D092819779900C0AA33 /* PokeListCell.swift */; };
 		95384D1128197E6500C0AA33 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95384D1028197E6500C0AA33 /* Pokemon.swift */; };
+		95694873281B7CD6009A7762 /* PartyTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95694872281B7CD6009A7762 /* PartyTabBarVC.swift */; };
+		95694875281B81EC009A7762 /* PartyNavbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95694874281B81EC009A7762 /* PartyNavbarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		95384D072819779300C0AA33 /* PokeListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListTableVC.swift; sourceTree = "<group>"; };
 		95384D092819779900C0AA33 /* PokeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListCell.swift; sourceTree = "<group>"; };
 		95384D1028197E6500C0AA33 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		95694872281B7CD6009A7762 /* PartyTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTabBarVC.swift; sourceTree = "<group>"; };
+		95694874281B81EC009A7762 /* PartyNavbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyNavbarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 				95384CDE28194FF200C0AA33 /* AppDelegate.swift */,
 				95384CE028194FF200C0AA33 /* SceneDelegate.swift */,
 				95384CE428194FF200C0AA33 /* Main.storyboard */,
+				95694872281B7CD6009A7762 /* PartyTabBarVC.swift */,
 				9503CD2B281AC4E4000ECD90 /* PartyContainer.swift */,
 				9503CD2D281AEF22000ECD90 /* DetailContainer.swift */,
 				9503CD29281AB5CB000ECD90 /* Launch Screen.storyboard */,
@@ -110,6 +115,7 @@
 				9503CD25281A90DE000ECD90 /* PokemonDetailVC.swift */,
 				9503CD36281B150E000ECD90 /* UIColor+Extension.swift */,
 				9503CD2F281B0D0A000ECD90 /* UIImageColors.swift */,
+				95694874281B81EC009A7762 /* PartyNavbarVC.swift */,
 				95384CEA28194FF200C0AA33 /* Assets.xcassets */,
 				95384CEF28194FF200C0AA33 /* Info.plist */,
 				95384CE728194FF200C0AA33 /* PokeTeam.xcdatamodeld */,
@@ -240,6 +246,7 @@
 				9503CD26281A90DE000ECD90 /* PokemonDetailVC.swift in Sources */,
 				95384D0A2819779900C0AA33 /* PokeListCell.swift in Sources */,
 				95384D1128197E6500C0AA33 /* Pokemon.swift in Sources */,
+				95694873281B7CD6009A7762 /* PartyTabBarVC.swift in Sources */,
 				9503CD30281B0D0A000ECD90 /* UIImageColors.swift in Sources */,
 				9503CD28281AB05E000ECD90 /* MainPageVC.swift in Sources */,
 				95384CE128194FF200C0AA33 /* SceneDelegate.swift in Sources */,
@@ -254,6 +261,7 @@
 				95384D042819775B00C0AA33 /* MemberTableVC.swift in Sources */,
 				95384D082819779300C0AA33 /* PokeListTableVC.swift in Sources */,
 				9503CD2C281AC4E4000ECD90 /* PartyContainer.swift in Sources */,
+				95694875281B81EC009A7762 /* PartyNavbarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
